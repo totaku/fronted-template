@@ -8,9 +8,19 @@ module.exports = {
         watch: pathSrc + '/html/**/*.html',
         dest: pathDest
     },
-    pug: {
+    // view: {
+    //     src: [pathSrc + '/html/*.html', pathSrc + '/html/pages/*.html'],
+    //     watch: pathSrc + '/html/**/*.html',
+    //     dest: pathDest
+    // },
+    view: {
         src: [pathSrc + '/pug/*.pug', pathSrc + '/pug/pages/*.pug'],
         watch: pathSrc + '/pug/**/*.pug',
         dest: pathDest
-    }
+    },
+    style: {
+        src: pathSrc + '/style/*.{sass,scss}',
+        watch: pathSrc + '/style/**/*.{sass,scss}',
+        dest: pathDest + '/style'
+    },
 }

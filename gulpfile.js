@@ -1,19 +1,21 @@
-const { watch, series, parallel } = require('gulp');
+const { series, parallel } = require('gulp');
 const browserSync = require('browser-sync').create();
 
 const path = require('./config/path');
 
 const clear =require('./task/clear');
+const serve = require('./task/serve');
 // const view = require('./task/html');
 const view = require('./task/pug');
-const serve = require('./task/serve');
+const style = require('./task/style');
+
 
 exports.view = view;
 exports.clear = clear;
-exports.serve = serve;
+exports.style = style;
 
 exports.dev = series(
     clear,
-    view,
+    parallel (view, style),
     serve
 )

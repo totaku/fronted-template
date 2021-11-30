@@ -1,0 +1,20 @@
+@import 'helpers/*';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: $base-font-size;
+    font-family: Arial;
+    line-height: 1.5;
+    background: center / cover no-repeat url('../img/bg.png');
+    // background-size: cover;
+
+    @include media-700 {
+        color: #fff;
+        background-color: #000;
+    }
+}
+
+@import 'block/*';

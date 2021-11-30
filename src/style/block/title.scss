@@ -1,0 +1,7 @@
+.title {
+    text-transform: uppercase;
+
+    @include media-700 {
+        text-align: center;
+    }
+}
