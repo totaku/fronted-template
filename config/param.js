@@ -58,5 +58,18 @@ module.exports = {
         lossless: true,
         quality: 100,
         alphaQuality: 100
+    },
+    favicon: {
+        icons: {
+            appleIcon: true,
+            favicons: true,
+            online: false,
+            appleStartup: false,
+            android: false,
+            firefox: false,
+            yandex: false,
+            windows: false,
+            coast: false
+        }
     }
 }

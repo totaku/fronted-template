@@ -10,6 +10,7 @@ const styles = require('./task/styles');
 const scripts = require('./task/scripts');
 const images = require('./task/images');
 const fonts = require('./task/fonts');
+const favicon = require('./task/favicon');
 
 
 exports.view = view;
@@ -18,11 +19,13 @@ exports.styles = styles;
 exports.scripts = scripts;
 exports.images = images;
 exports.fonts = fonts;
+exports.favicon = favicon;
 
 exports.dev = series(
     clear,
     images,
     fonts,
+    favicon,
     parallel (view, styles, scripts),
     serve
 )

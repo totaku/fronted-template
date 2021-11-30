@@ -29,9 +29,14 @@ module.exports = {
         dest: pathDest + '/js'
     },
     images: {
-        src: pathSrc + '/img/*.{png,jpg,jpeg,gif,svg}',
-        watch: pathSrc + '/img/**/*.{png,jpg,jpeg,gif,svg}',
+        src: [pathSrc + '/img/*.{png,jpg,jpeg,gif,svg}', !pathSrc + '/img/favicon/*.{jpg,jpeg,png,gif,tiff}'],
+        watch: [pathSrc + '/img/**/*.{png,jpg,jpeg,gif,svg}', !pathSrc + '/img/favicon/*.{jpg,jpeg,png,gif,tiff}'],
         dest: pathDest + '/img'
+    },
+    favicon: {
+        src: pathSrc + '/img/favicon/*.{jpg,jpeg,png,gif,tiff}',
+        watch: pathSrc + '/img/favicon/*.{jpg,jpeg,png,gif,tiff}',
+        dest: pathDest + '/img/favicons'
     },
     fonts: {
         src: pathSrc + '/fonts/*.{eot,ttf,otc,ttc,woff,woff2,otf,svg}',
