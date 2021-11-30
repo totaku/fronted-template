@@ -6,28 +6,14 @@ const path = require('./config/path');
 const clear =require('./task/clear');
 // const view = require('./task/html');
 const view = require('./task/pug');
+const serve = require('./task/serve');
 
-const server = () =>{
-    browserSync.init({
-        server:{ baseDir: path.root },
-        notify: false,
-        open: true,
-        cors: true,
-        browser: "FirefoxDeveloperEdition",
-        port: 3000
-    });
-}
-
-const watcher = () =>{
-    watch(path.pug.watch, view).on('all', browserSync.reload); 
-}
-
-// exports.html = html;
 exports.view = view;
 exports.clear = clear;
+exports.serve = serve;
 
 exports.dev = series(
     clear,
     view,
-    parallel(watcher, server)
+    serve
 )
