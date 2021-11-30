@@ -5,20 +5,18 @@ const param = require('../config/param');
 
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
-const view = require('gulp-pug');
+const pug = require('gulp-pug');
 const webpHtml = require('gulp-webp-html');
 
-const pug = () =>{
-    return src(path.pug.src)
+module.exports = function view() {
+    return src(path.view.src)
     .pipe(plumber({
         errorHandler: notify.onError(error => ({
             title: 'Pug',
             message: error.message
         }))
     }))
-    .pipe(view(param.pug))
+    .pipe(pug(param.pug))
     .pipe(webpHtml())
-    .pipe(dest(path.pug.dest));
+    .pipe(dest(path.view.dest));
 }
-
-module.exports = pug;

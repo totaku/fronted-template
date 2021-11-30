@@ -2,8 +2,6 @@ const del = require('del');
 
 const path = require('../config/path');
 
-const clear = () =>{
+module.exports = function clear() {
     return del(path.root)
 }
-
-module.exports = clear;

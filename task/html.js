@@ -10,8 +10,8 @@ const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
 const webpHtml = require('gulp-webp-html');
 
-const html = () =>{
-    return src(path.html.src)
+module.exports = function view() {
+    return src(path.view.src)
     .pipe(plumber({
         errorHandler: notify.onError(error => ({
             title: 'Html',
@@ -23,7 +23,5 @@ const html = () =>{
     .pipe(size({ title: 'До сжатия:'}))
     .pipe(htmlmin(param.htmlmin))
     .pipe(size({ title: 'После сжатия:'}))
-    .pipe(dest(path.html.dest));
+    .pipe(dest(path.view.dest));
 }
-
-module.exports = html;
