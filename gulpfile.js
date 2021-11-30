@@ -1,5 +1,4 @@
 const { series, parallel } = require('gulp');
-const browserSync = require('browser-sync').create();
 
 const path = require('./config/path');
 
