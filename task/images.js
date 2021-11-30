@@ -8,6 +8,7 @@ const notify = require('gulp-notify');
 const imagemin = require('gulp-imagemin');
 const newer = require('gulp-newer');
 const webp = require('gulp-webp');
+const imageminWebp = require('imagemin-webp');
 
 module.exports = function images() {
     return src(path.images.src)
@@ -18,7 +19,7 @@ module.exports = function images() {
         }))
     }))
     .pipe(newer(path.images.dest)) 
-    .pipe(webp())
+    .pipe(webp(imageminWebp(param.imageminWEBP)))
     .pipe(dest(path.images.dest))
     .pipe(src(path.images.src))
     .pipe(newer(path.images.dest)) 

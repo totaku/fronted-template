@@ -35,6 +35,7 @@
     "gulp-webp": "^4.0.1",
     "gulp-webp-css": "^1.1.0",
     "gulp-webp-html": "^1.0.2",
+    "imagemin-webp": "^6.0.0",
     "sass": "^1.44.0",
     "webpack": "^5.64.4",
     "webpack-stream": "^7.0.0"

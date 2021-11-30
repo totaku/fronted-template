@@ -53,5 +53,10 @@ module.exports = {
             { removeEmptyText: true },
             { collapseGroups: true }
         ]
+    },
+    imageminWEBP: {
+        lossless: true,
+        quality: 100,
+        alphaQuality: 100
     }
 }
