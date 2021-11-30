@@ -1,0 +1,9 @@
+{
+  "name": "fronted-template",
+  "version": "1.0.0",
+  "description": "Template for Frontend",
+  "main": "index.js",
+  "repository": "git@github.com:totaku/fronted-template.git",
+  "author": "Totaku <banana@3lf.ru>",
+  "license": "MIT"
+}
