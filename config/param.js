@@ -9,7 +9,7 @@ module.exports = {
         }
     },
     cssmin: {
-        compatibility: "ie8", level: {
+        compatibility: 'ie8', level: {
             1: {
                 specialComments: 0,
                 removeEmpty: true,
@@ -24,6 +24,9 @@ module.exports = {
                 removeUnusedAtRules: false
             }
         }
+    },
+    fonter: {
+        formats: ['ttf', 'woff', 'svg']
     },
     webpack: {
         mode: 'development'
@@ -50,6 +53,5 @@ module.exports = {
             { removeEmptyText: true },
             { collapseGroups: true }
         ]
-    },
-
+    }
 }

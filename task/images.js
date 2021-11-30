@@ -10,6 +10,12 @@ const newer = require('gulp-newer');
 
 module.exports = function images() {
     return src(path.images.src)
+    .pipe(plumber({
+        errorHandler: notify.onError(error => ({
+            title: 'Images',
+            message: error.message
+        }))
+    }))
     .pipe(newer(path.images.dest))  
     .pipe(imagemin([
         imagemin.gifsicle(param.imageminGIF),
