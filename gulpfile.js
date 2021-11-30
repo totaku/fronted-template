@@ -7,15 +7,17 @@ const clear =require('./task/clear');
 const serve = require('./task/serve');
 // const view = require('./task/html');
 const view = require('./task/pug');
-const style = require('./task/style');
+const styles = require('./task/styles');
+const scripts = require('./task/scripts');
 
 
 exports.view = view;
 exports.clear = clear;
-exports.style = style;
+exports.styles = styles;
+exports.scripts = scripts;
 
 exports.dev = series(
     clear,
-    parallel (view, style),
+    parallel (view, styles, scripts),
     serve
 )

@@ -24,5 +24,8 @@ module.exports = {
                 removeUnusedAtRules: false
             }
         }
+    },
+    webpack: {
+        mode: 'development'
     }
 }

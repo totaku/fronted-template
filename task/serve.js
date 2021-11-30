@@ -5,7 +5,8 @@ const path = require('../config/path');
 
 // const view = require('./html');
 const view = require('./pug');
-const style = require('./style');
+const styles = require('./styles');
+const scripts = require('./scripts');
 
 module.exports = function serve(cb) {
     browserSync.init({
@@ -17,7 +18,8 @@ module.exports = function serve(cb) {
         port: 3000
     });
 
-    watch(path.style.watch, series(style)).on('all', browserSync.reload);
+    watch(path.js.watch, series(scripts)).on('all', browserSync.reload);
+    watch(path.style.watch, series(styles)).on('all', browserSync.reload);
     watch(path.view.watch, series(view)).on('all', browserSync.reload);
 
   return cb()
