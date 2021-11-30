@@ -71,5 +71,16 @@ module.exports = {
             windows: false,
             coast: false
         }
+    },
+    sprites:{
+        shape: {
+            dest: "intermediate-svg"
+        },
+        mode: {
+            stack: {
+                sprite: "../sprite.svg",
+                // example: true
+            }
+        }
     }
 }

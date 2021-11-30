@@ -42,5 +42,10 @@ module.exports = {
         src: pathSrc + '/fonts/*.{eot,ttf,otc,ttc,woff,woff2,otf,svg}',
         watch: pathSrc + '/fonts/**/*.{eot,ttf,otc,ttc,otf,woff,woff2,svg}',
         dest: pathDest + '/fonts'
+    },
+    sprites: {
+        src: pathSrc + '/sprites/*.svg',
+        watch: pathSrc + '/sprites/**/*.svg',
+        dest: pathDest + '/img/sprites'
     }
 }

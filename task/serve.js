@@ -10,6 +10,7 @@ const scripts = require('./scripts');
 const images = require('./images');
 const fonts = require('./fonts');
 const favicon = require('./favicon');
+const sprites = require('./sprites');
 
 module.exports = function serve(cb) {
     browserSync.init({
@@ -27,6 +28,7 @@ module.exports = function serve(cb) {
     watch(path.view.watch, series(view)).on('all', browserSync.reload);
     watch(path.fonts.watch, series(fonts)).on('all', browserSync.reload);
     watch(path.favicon.watch, series(favicon)).on('all', browserSync.reload);
+    watch(path.sprites.watch, series(sprites)).on('all', browserSync.reload);
 
   return cb()
 };
