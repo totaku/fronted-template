@@ -5,7 +5,7 @@ const param = require('../config/param');
 
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
-const pugs = require('gulp-pug');
+const view = require('gulp-pug');
 const webpHtml = require('gulp-webp-html');
 
 const pug = () =>{
@@ -16,7 +16,7 @@ const pug = () =>{
             message: error.message
         }))
     }))
-    .pipe(pugs(param.pug))
+    .pipe(view(param.pug))
     .pipe(webpHtml())
     .pipe(dest(path.pug.dest));
 }
