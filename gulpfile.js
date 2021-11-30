@@ -9,15 +9,18 @@ const serve = require('./task/serve');
 const view = require('./task/pug');
 const styles = require('./task/styles');
 const scripts = require('./task/scripts');
+const images = require('./task/images')
 
 
 exports.view = view;
 exports.clear = clear;
 exports.styles = styles;
 exports.scripts = scripts;
+exports.images = images;
 
 exports.dev = series(
     clear,
+    images,
     parallel (view, styles, scripts),
     serve
 )

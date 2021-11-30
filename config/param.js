@@ -8,7 +8,7 @@ module.exports = {
             news: require('../data/news.json')
         }
     },
-    mincss: {
+    cssmin: {
         compatibility: "ie8", level: {
             1: {
                 specialComments: 0,
@@ -27,5 +27,29 @@ module.exports = {
     },
     webpack: {
         mode: 'development'
-    }
+    },
+    imageminGIF:{
+        interlaced: true
+    },
+    imageminPNG: {
+        speed: 5,
+        quality: [0.6, 0.8]
+    },
+    imageminJPG: {
+        progressive: true,
+        quality: 75
+    },
+    imageminSVGO: {
+        plugins: [
+            { removeViewBox: false },
+            { removeUnusedNS: false },
+            { removeUselessStrokeAndFill: false },
+            { cleanupIDs: false },
+            { removeComments: true },
+            { removeEmptyAttrs: true },
+            { removeEmptyText: true },
+            { collapseGroups: true }
+        ]
+    },
+
 }

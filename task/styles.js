@@ -31,7 +31,7 @@ module.exports = function style() {
     .pipe(groupCssMediaQueries())
     .pipe(dest(path.style.dest, { sourcemaps: true }))
     .pipe(size({ title: 'main.css'}))
-    .pipe(mincss(param.mincss))
+    .pipe(mincss(param.cssmin))
     .pipe(size({ title: 'main.min.css'}))
     .pipe(rename({ suffix: '.min' }))
     .pipe(dest(path.style.dest, { sourcemaps: '.' }));
