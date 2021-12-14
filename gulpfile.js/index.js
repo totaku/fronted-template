@@ -13,6 +13,16 @@ const fonts = require('./task/fonts');
 const favicon = require('./task/favicon');
 const sprites = require('./task/sprites');
 
+const build = series(
+    clear,
+    parallel (view, styles, scripts, fonts, favicon, sprites, images)
+);
+
+const dev = series(
+    build,
+    serve
+)
+
 exports.view = view;
 exports.clear = clear;
 exports.styles = styles;
@@ -22,12 +32,5 @@ exports.fonts = fonts;
 exports.favicon = favicon;
 exports.sprites = sprites;
 
-exports.dev = series(
-    clear,
-    images,
-    fonts,
-    favicon,
-    sprites,
-    parallel (view, styles, scripts),
-    serve
-)
+exports.dev = dev;
+exports.build = build;
